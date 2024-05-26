@@ -9,7 +9,7 @@ const selectById = (autor_id) => {
 
 const insert = ({ nombre, email, imagen }) => {
     return db.query(`
-        insert into autores (nombre, email, imagen) values 
+        insert into autores (nombre, email, imagen) 
         values (?, ?, ?)`, 
         [nombre, email, imagen]);
 }

@@ -2,10 +2,15 @@
 
 @HOST = http://localhost:{{PORT}}
 
+
+#############################################################################
+## PETICIONES PARA LOS POSTS
+
+## Obtiene todos los posts
 GET {{HOST}}/api/posts
 
 ###
-
+## Crear un nuevo post
 POST {{HOST}}/api/posts
 Content-Type: application/json
 
@@ -18,14 +23,40 @@ Content-Type: application/json
     "autor_id": 1
 }
 
+###
+## Obtiene un post por su id
+GET {{HOST}}/api/posts/2
+
+###
+## Modifica un post
+PUT {{HOST}}/api/posts/1
+Content-Type: application/json
+
+//titulo, descripcion, fecha, categoria, autor_id
+{
+    "titulo": "Post 1 modificado",
+    "descripcion": "Descripcion 1 modificada",
+    "fecha": "2024-01-01",
+    "categoria": "Categoria 1 modificada",
+    "autor_id": 2
+}
+
+###
+## Elimina un post
+DELETE {{HOST}}/api/posts/1
+
+###
+## Obtiene todos los posts de un autor
+GET {{HOST}}/api/posts/autor/1
+
 #############################################################################
 ## PETICIONES PARA LOS AUTORES
 
-
+## Obtiene todos los autores
 GET {{HOST}}/api/autores
 
 ###
-
+## Crea un nuevo autor
 POST {{HOST}}/api/autores
 Content-Type: application/json
 
@@ -37,11 +68,11 @@ Content-Type: application/json
 }
 
 ###
-
+## Obtiene un autor por su id
 GET {{HOST}}/api/autores/1
 
 ###
-
+## Modifica un autor
 PUT {{HOST}}/api/autores/1
 Content-Type: application/json
 

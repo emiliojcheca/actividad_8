@@ -26,8 +26,8 @@ const createAutor = async (req, res, next) => {
     try {
         const [result] = await Autor.insert(req.body);
         // Como respuesta devolvemos el nuevo autor creado
-        const [[paciente]] = await Paciente.selectById(result.insertId);
-        res.json(paciente);
+        const [[autor]] = await Autor.selectById(result.insertId);
+        res.json(autor);
     } catch (err) {
         next(err);
     }

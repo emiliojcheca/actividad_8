@@ -16,7 +16,7 @@ const getAllPostsByAutor = async (req, res, next) => {
         if (result.length === 0) {
             return res.status(404).json({ error: 'No se han encontrado posts' });
         }
-        res.json(result[0]);
+        res.json(result);
     } catch (err) {
         next(err);
     }
