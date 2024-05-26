@@ -1,4 +1,4 @@
-// Rutas /api/pacientes
+// Rutas /api/posts
 const router = require('express').Router();
 
 const { getAllPosts, getAllPostsByAutor, getPostById, createPost, updatePost, deletePost } = require('../../controllers/posts.controller');
