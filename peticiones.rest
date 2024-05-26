@@ -1,0 +1,55 @@
+@PORT = 3000
+
+@HOST = http://localhost:{{PORT}}
+
+GET {{HOST}}/api/posts
+
+###
+
+POST {{HOST}}/api/posts
+Content-Type: application/json
+
+//titulo, descripcion, fecha, categoria, autor_id
+{
+    "titulo": "Post 1",
+    "descripcion": "Descripcion 1",
+    "fecha": "2020-01-01",
+    "categoria": "Categoria 1",
+    "autor_id": 1
+}
+
+#############################################################################
+## PETICIONES PARA LOS AUTORES
+
+
+GET {{HOST}}/api/autores
+
+###
+
+POST {{HOST}}/api/autores
+Content-Type: application/json
+
+//nombre, email, imagen
+{
+    "nombre": "Autor de Prueba",
+    "email": "autor_de_prueba@mail.com",
+    "imagen": "http://dummyimage.com/221x100.png/cc0000/ffffff"
+}
+
+###
+
+GET {{HOST}}/api/autores/1
+
+###
+
+PUT {{HOST}}/api/autores/1
+Content-Type: application/json
+
+//nombre, email, imagen
+{
+    "nombre": "Autor 1",
+    "email": "autor1@mail.com",
+    "imagen": "http://dummyimage.com/238x100.png/ff4444/ffffff"
+}
+
+
